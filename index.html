@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Texas security deposit help — GetMyDeposit</title>
-<meta name="description" content="Texas landlord kept your deposit? If they missed the 30-day deadline, the law can presume bad faith — you may be able to claim up to 3x plus fees. We're building the tool that does the paperwork. Early access.">
+<title>Texas security deposit help — GetMyDeposit (early access)</title>
+<meta name="description" content="Texas landlord kept your deposit? If they missed the 30-day deadline, the law can presume bad faith — you may be able to claim up to 3x plus fees. We're building a self-help paperwork tool. Join early access — not live yet.">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.6.0/dist/tabler-icons.min.css">
 <!-- Google tag (gtag.js) — Google Ads AW-874562020 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-874562020"></script>
@@ -15,6 +15,7 @@
   --border:#e6e6e1; --border-strong:#d3d3cc;
   --accent:#2563eb; --accent-bg:#eef4fe; --on-accent:#fff;
   --success:#15803d; --danger:#b91c1c; --danger-bg:#fdeceb; --amber:#d97706;
+  --notice:#fffbeb; --notice-text:#92400e; --notice-border:#fde68a;
   --radius:8px;
 }
 *{box-sizing:border-box}
@@ -27,6 +28,8 @@ body{margin:0;background:var(--page);color:var(--text);
 .brand{font-size:17px;font-weight:600}
 .brand i{color:var(--success);vertical-align:-2px;margin-right:6px}
 .tag{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:var(--radius);padding:4px 10px}
+.notice{background:var(--notice);border-bottom:1px solid var(--notice-border);padding:11px 18px;text-align:center;font-size:12.5px;color:var(--notice-text);line-height:1.45}
+.notice i{vertical-align:-2px;margin-right:5px}
 .stats{display:flex;border-bottom:1px solid var(--border)}
 .stats div{flex:1;padding:10px;text-align:center;font-size:11.5px;color:var(--muted);border-right:1px solid var(--border)}
 .stats div:last-child{border-right:none}
@@ -109,6 +112,10 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
       <span class="tag">Texas renters · early access</span>
     </div>
 
+    <div class="notice">
+      <i class="ti ti-clock-hour-4"></i><b>Early access — not live yet.</b> This is a waitlist. Nothing is prepared, filed, or sent right now, and we are not a law firm.
+    </div>
+
     <div class="stats">
       <div><b>30 days</b>TX deadline to return it</div>
       <div><b class="g">up to 3×</b>penalty for bad faith</div>
@@ -117,10 +124,10 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
 
     <div class="hero">
       <span class="badge"><i class="ti ti-scale"></i>Texas Property Code §92.109</span>
-      <h1>Your landlord kept your deposit. Texas law may let you take back <span class="win">up to 3×.</span></h1>
-      <p class="sub">If a landlord misses Texas's 30-day deadline to return a deposit, the law <b>can presume bad faith</b> — opening the door to up to 3× plus fees. We're building GetMyDeposit to do that paperwork for you.</p>
-      <button class="cta" onclick="track('hero_cta');document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">See if you qualify <i class="ti ti-arrow-right" style="vertical-align:-2px"></i></button>
-      <p class="micro">2-minute check · no lawyer · no payment</p>
+      <h1>Landlord kept your deposit? If they missed the 30-day deadline, Texas law may let you claim <span class="win">up to 3×.</span></h1>
+      <p class="sub">Miss the deadline to return a deposit and Texas law <b>can presume bad faith</b> — opening the door to up to 3× plus fees. We're building GetMyDeposit to give Texas renters the paperwork and plain-English steps to do it themselves.</p>
+      <button class="cta" onclick="track('hero_cta');document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">Join early access <i class="ti ti-arrow-right" style="vertical-align:-2px"></i></button>
+      <p class="micro">Takes 2 minutes · no lawyer · no payment</p>
     </div>
 
     <div class="band">
@@ -132,25 +139,25 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
       <p class="lbl">How it'll work when we launch</p>
       <div class="mini pick" style="text-align:center;padding:16px">
         <p class="v" style="margin:0">$79 flat — planned</p>
-        <p class="n" style="margin-top:6px">No lawyer. No percentage cut. You keep 100% of whatever you recover.</p>
+        <p class="n" style="margin-top:6px">No lawyer. No percentage cut. You keep 100% of any amount you recover.</p>
       </div>
     </div>
 
     <div class="sect" style="padding-top:18px">
       <div class="grid cols3">
         <div class="step"><i class="ti ti-message-2"></i><h3>Tell us what happened</h3><p>A few quick questions about your deposit. Two minutes.</p></div>
-        <div class="step"><i class="ti ti-file-text g"></i><h3>We build the paperwork</h3><p>At launch, GetMyDeposit drafts your demand letter and court forms for your situation.</p></div>
+        <div class="step"><i class="ti ti-file-text g"></i><h3>Paperwork made simple</h3><p>At launch: a demand-letter and small-claims template with plain-English instructions you complete yourself.</p></div>
         <div class="step"><i class="ti ti-send"></i><h3>You file it yourself</h3><p>Texas lets you represent yourself in small-claims court — and keep what you recover.</p></div>
       </div>
     </div>
 
     <div class="sect" style="padding-top:14px">
-      <div class="mini" style="text-align:center;padding:14px"><p style="font-size:13px;color:var(--muted);margin:0">A new service built for Texas renters — join the first group we help. Backed by Texas Property Code §92.109.</p></div>
+      <div class="mini" style="text-align:center;padding:14px"><p style="font-size:13px;color:var(--muted);margin:0">A new service built for Texas renters — join the first group we notify at launch. Backed by Texas Property Code §92.109.</p></div>
     </div>
 
     <div class="form" id="formCard">
       <form id="leadForm">
-        <h2>See if you qualify</h2>
+        <h2>Join the early-access list</h2>
         <p class="ask">Did your landlord keep part or all of your deposit?</p>
         <div class="toggle">
           <button type="button" data-v="some">Kept some of it</button>
@@ -163,18 +170,18 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
           <div class="field"><label>Deposit amount</label><input type="text" name="deposit" placeholder="$1,200"></div>
           <div class="field"><label>Move-out date</label><input type="date" name="moveout"></div>
         </div>
-        <button type="submit" class="cta" style="max-width:none">See if I qualify</button>
-        <p class="note"><i class="ti ti-lock"></i>No SSN, no documents, no payment. Early access — we're not live yet.</p>
+        <button type="submit" class="cta" style="max-width:none">Join early access</button>
+        <p class="note"><i class="ti ti-lock"></i>Early access — not live yet. No SSN, no payment. Self-help service, not a law firm.</p>
       </form>
     </div>
 
     <div class="foot">
-      <p>We are not a law firm and do not give legal advice — we prepare self-help documents at your direction. In Texas you represent yourself in small-claims (Justice) court; no lawyer required. Every case is different and we can't promise any specific outcome. Not affiliated with any court or government agency.</p>
+      <p>We are not a law firm and do not give legal advice — at launch we provide self-help document templates and instructions you complete yourself. In Texas you represent yourself in small-claims (Justice) court; no lawyer required. Every case is different and we can't promise any specific outcome. Not affiliated with any court or government agency.</p>
     </div>
   </div>
 </div>
 
-<div class="stickybar"><button class="cta" onclick="track('sticky_cta');document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">See if you qualify <i class="ti ti-arrow-right" style="vertical-align:-2px"></i></button></div>
+<div class="stickybar"><button class="cta" onclick="track('sticky_cta');document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">Join early access <i class="ti ti-arrow-right" style="vertical-align:-2px"></i></button></div>
 
 <script>
 /* ===== CONFIG — paste your Google Ads conversion send-to (ID/LABEL) ===== */
