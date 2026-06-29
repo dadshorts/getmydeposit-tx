@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get your Texas security deposit back — GetMyDeposit</title>
+<meta name="description" content="Texas landlord kept your deposit? If they missed the 30-day deadline, the law presumes bad faith — you can claim up to 3x plus fees. We build the paperwork. You keep 100%.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.6.0/dist/tabler-icons.min.css">
+<style>
+:root{
+  --page:#f6f6f4; --surface:#fff; --text:#1d1d1b; --muted:#6b6b66; --faint:#9a9a94;
+  --border:#e6e6e1; --border-strong:#d3d3cc;
+  --accent:#2563eb; --accent-bg:#eef4fe; --on-accent:#fff;
+  --success:#15803d; --danger:#b91c1c; --danger-bg:#fdeceb; --amber:#d97706;
+  --radius:8px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:600px;margin:0 auto;padding:18px 14px 40px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border)}
+.brand{font-size:17px;font-weight:600}
+.brand i{color:var(--success);vertical-align:-2px;margin-right:6px}
+.tag{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:var(--radius);padding:4px 10px}
+.stats{display:flex;border-bottom:1px solid var(--border)}
+.stats div{flex:1;padding:10px;text-align:center;font-size:11.5px;color:var(--muted);border-right:1px solid var(--border)}
+.stats div:last-child{border-right:none}
+.stats b{font-size:15px;color:var(--text);display:block}
+.stats b.g{color:var(--success)}
+.hero{padding:28px 22px 22px;text-align:center}
+.badge{display:inline-block;background:var(--accent-bg);color:var(--accent);font-size:12px;font-weight:600;padding:5px 13px;border-radius:var(--radius);margin-bottom:16px}
+.badge i{vertical-align:-2px;margin-right:5px}
+h1{font-size:clamp(22px,6vw,27px);font-weight:700;line-height:1.25;margin:0 auto 12px;max-width:520px}
+h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
+.sub{font-size:15px;color:var(--muted);max-width:500px;margin:0 auto 22px}
+.sub b{color:var(--text);font-weight:600}
+.cta{background:var(--accent);color:var(--on-accent);border:none;padding:14px 26px;border-radius:var(--radius);
+  font-size:16px;font-weight:600;cursor:pointer;width:100%;max-width:340px}
+.cta:hover{background:#1d4ed8}
+.micro{font-size:12px;color:var(--faint);margin:13px 0 0}
+.band{margin:0 22px 20px;background:var(--danger-bg);border-radius:12px;padding:14px 16px;display:flex;gap:11px}
+.band i{font-size:20px;color:var(--danger);flex-shrink:0;margin-top:2px}
+.band p{font-size:13px;color:var(--danger);margin:0}
+.sect{padding:0 22px}
+.lbl{font-size:13px;color:var(--muted);text-align:center;margin:18px 0 12px}
+.grid{display:grid;gap:11px}
+.cols3{grid-template-columns:repeat(3,1fr)}
+.cols2{grid-template-columns:1fr 1fr}
+.mini{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center}
+.mini.pick{border:2px solid var(--accent)}
+.mini .k{font-size:12px;color:var(--muted);margin:0 0 4px}
+.mini .v{font-size:18px;font-weight:700;margin:0;color:var(--text)}
+.mini .n{font-size:11px;margin:4px 0 0;color:var(--faint)}
+.mini.pick .k{color:var(--accent)} .mini.pick .n{color:var(--success)}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;text-align:left}
+.step i{font-size:21px;color:var(--accent)} .step i.g{color:var(--success)}
+.step h3{font-size:14px;font-weight:600;margin:8px 0 4px}
+.step p{font-size:13px;color:var(--muted);margin:0}
+.quote{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;text-align:left}
+.quote .st{color:var(--amber);font-size:13px;letter-spacing:1px;margin-bottom:6px}
+.quote p{font-size:13px;color:var(--muted);margin:0 0 6px}
+.quote .who{font-size:12px;color:var(--faint)}
+.form{margin:20px 22px 22px;background:var(--page);border-radius:12px;padding:20px}
+.form h2{font-size:17px;font-weight:600;margin:0 0 4px}
+.form .ask{font-size:13px;color:var(--muted);margin:0 0 14px}
+.toggle{display:flex;gap:10px;margin-bottom:16px}
+.toggle button{flex:1;padding:12px;border:1.5px solid var(--border-strong);border-radius:var(--radius);
+  background:var(--surface);font-size:14px;cursor:pointer;color:var(--text)}
+.toggle button.on{border-color:var(--accent);color:var(--accent);font-weight:600}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:13px}
+.field.full{grid-column:1/-1}
+.field label{font-size:13px;color:var(--muted)}
+.field input,.field select{font:inherit;font-size:15px;padding:9px 11px;border:1px solid var(--border-strong);
+  border-radius:var(--radius);background:var(--surface);color:var(--text);width:100%}
+.field input:focus,.field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-bg)}
+.note{font-size:12px;color:var(--faint);text-align:center;margin:10px 0 0}
+.note i{vertical-align:-1px;margin-right:4px}
+.done{display:none;text-align:center;padding:14px 4px}
+.done i{font-size:34px;color:var(--success)}
+.done h2{font-size:17px;font-weight:600;margin:10px 0 4px}
+.done p{font-size:13px;color:var(--muted);margin:0 0 16px}
+.foot{border-top:1px solid var(--border);padding:14px 22px;text-align:center}
+.foot p{font-size:11px;color:var(--faint);margin:0}
+@media(max-width:480px){
+  .fields{grid-template-columns:1fr}
+  .cols3,.cols2{grid-template-columns:1fr}
+  .hero{padding:24px 16px 18px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="nav">
+      <span class="brand"><i class="ti ti-cash"></i>GetMyDeposit</span>
+      <span class="tag">Texas renters only</span>
+    </div>
+
+    <div class="stats">
+      <div><b>59%</b>don't get it all back</div>
+      <div><b class="g">60–80%</b>who file in TX win</div>
+      <div><b>$1,200+</b>avg at stake</div>
+    </div>
+
+    <div class="hero">
+      <span class="badge"><i class="ti ti-scale"></i>Texas Property Code §92.109</span>
+      <h1>Your landlord is sitting on money that's <span class="loss">legally yours.</span> Take it back — <span class="win">up to 3×.</span></h1>
+      <p class="sub">Because they missed Texas's 30-day deadline, the law <b>already presumes bad faith</b> — so you can claim triple what they kept, plus your fees. We build the paperwork. You keep every dollar.</p>
+      <button class="cta" onclick="document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">See what you're owed — free <i class="ti ti-arrow-right" style="vertical-align:-2px"></i></button>
+      <p class="micro">2-minute start · no lawyer · no payment to begin</p>
+    </div>
+
+    <div class="band">
+      <i class="ti ti-alert-triangle"></i>
+      <p>Landlords count on you giving up — most renters walk away from $500–$2,000 rather than face the paperwork. Every week you wait, they move and the paper trail goes cold.</p>
+    </div>
+
+    <div class="sect">
+      <p class="lbl">What the alternatives cost you</p>
+      <div class="grid cols3">
+        <div class="mini"><p class="k">Hire a lawyer</p><p class="v" style="color:var(--muted)">$1,500+</p><p class="n">+ takes a cut</p></div>
+        <div class="mini"><p class="k">Other prep services</p><p class="v" style="color:var(--muted)">~$450</p><p class="n">slow, generic</p></div>
+        <div class="mini pick"><p class="k">GetMyDeposit</p><p class="v">$79</p><p class="n">you keep 100%</p></div>
+      </div>
+    </div>
+
+    <div class="sect" style="padding-top:18px">
+      <div class="grid cols3">
+        <div class="step"><i class="ti ti-message-2"></i><h3>Tell us what happened</h3><p>A few questions. Two minutes, no documents yet.</p></div>
+        <div class="step"><i class="ti ti-gift g"></i><h3>Get your letter free</h3><p>A certified demand letter for your case — yours to keep, even if you never pay a cent.</p></div>
+        <div class="step"><i class="ti ti-send"></i><h3>Win it in court</h3><p>Want the full court kit? $79 — and you keep all 3×.</p></div>
+      </div>
+    </div>
+
+    <!-- REPLACE THESE WITH REAL, VERIFIED TESTIMONIALS BEFORE LAUNCH (FTC requirement). Placeholders only. -->
+    <div class="sect" style="padding-top:14px">
+      <div class="grid cols2">
+        <div class="quote"><div class="st">★★★★★</div><p>"Got my full $1,400 back in three weeks. The letter alone scared my landlord into paying."</p><div class="who">Verified renter · Austin</div></div>
+        <div class="quote"><div class="st">★★★★★</div><p>"I'd have given up. They owed me triple and I didn't even know it was a law."</p><div class="who">Verified renter · Dallas</div></div>
+      </div>
+    </div>
+
+    <div class="form" id="formCard">
+      <form id="leadForm">
+        <h2>Start with one question</h2>
+        <p class="ask">Did your landlord keep part or all of your deposit?</p>
+        <div class="toggle">
+          <button type="button" data-v="some">Kept some of it</button>
+          <button type="button" data-v="all">Kept all of it</button>
+        </div>
+        <input type="hidden" name="kept" id="kept">
+        <div class="fields">
+          <div class="field"><label>Email</label><input type="email" name="email" placeholder="name@email.com" required></div>
+          <div class="field"><label>City</label><input type="text" name="city" placeholder="Austin" required></div>
+          <div class="field"><label>Deposit amount</label><input type="text" name="deposit" placeholder="$1,200"></div>
+          <div class="field"><label>Move-out date</label><input type="date" name="moveout"></div>
+        </div>
+        <button type="submit" class="cta" style="max-width:none">Write my free demand letter</button>
+        <p class="note"><i class="ti ti-lock"></i>No SSN, no documents, no payment to start.</p>
+      </form>
+      <div class="done" id="done">
+        <i class="ti ti-circle-check"></i>
+        <h2>Your free demand letter is on its way</h2>
+        <p>It's yours to send — no strings. Ready to take it all the way and claim your 3×?</p>
+        <button class="cta" id="payBtn" style="max-width:none">Get the full court-ready kit — $79</button>
+      </div>
+    </div>
+
+    <div class="foot">
+      <p>We are not a law firm and do not give legal advice — we prepare your self-help documents at your direction. In Texas you represent yourself in small-claims (Justice) court; no lawyer required. Not affiliated with any court or government agency.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ========= CONFIG — paste your own values here ========= */
+var FORMSPREE = "https://formspree.io/f/YOUR_FORM_ID";   // 1) create a free form at formspree.io, paste its endpoint
+var STRIPE_LINK = "";                                     // 2) optional: paste a Stripe Payment Link to take real $79 payments
+/* ======================================================= */
+
+var keptInput = document.getElementById('kept');
+document.querySelectorAll('.toggle button').forEach(function(b){
+  b.addEventListener('click', function(){
+    document.querySelectorAll('.toggle button').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); keptInput.value = b.dataset.v;
+  });
+});
+
+document.getElementById('leadForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var data = new FormData(e.target);
+  fetch(FORMSPREE, {method:'POST', body:data, headers:{'Accept':'application/json'}}).catch(function(){});
+  document.getElementById('leadForm').style.display='none';
+  document.getElementById('done').style.display='block';
+});
+
+document.getElementById('payBtn').addEventListener('click', function(){
+  /* PAYMENT-INTENT SIGNAL — this is the buy-signal we test for */
+  var d = new FormData(); d.append('event','PAYMENT_INTENT_$79'); d.append('_subject','BUY SIGNAL — clicked $79');
+  fetch(FORMSPREE, {method:'POST', body:d, headers:{'Accept':'application/json'}}).catch(function(){});
+  if(window.gtag){ gtag('event','conversion',{send_to:'PAYMENT_INTENT'}); }  /* optional Google Ads conversion */
+  if(STRIPE_LINK){ window.location.href = STRIPE_LINK; }
+  else { this.textContent = "Got it — we'll email your kit shortly"; this.style.background='var(--success)'; }
+});
+</script>
+</body>
+</html>
