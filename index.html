@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Texas security deposit help — GetMyDeposit (early access)</title>
-<meta name="description" content="Texas landlord kept your deposit? If they missed the 30-day deadline to return it or itemize deductions, the law can presume bad faith — you may be able to claim up to 3x plus fees. We're building a self-help paperwork tool. Join early access — not live yet.">
+<title>Texas security deposit help — GetMyDeposit (coming soon)</title>
+<meta name="description" content="Texas landlord kept your deposit? If they missed the 30-day deadline to return it or itemize deductions, the law can presume bad faith — you may be able to claim up to 3x plus fees. We're building a self-help paperwork tool. Coming soon — not live yet.">
 <link rel="canonical" href="https://getmydeposit.net/">
 <meta name="theme-color" content="#0f2c22">
-<meta property="og:title" content="Texas security deposit help — GetMyDeposit (early access)">
-<meta property="og:description" content="Landlord kept your Texas deposit? If they missed the 30-day deadline to return it or itemize deductions, the law can presume bad faith — up to 3x plus fees may be on the table. Join early access — not live yet.">
+<meta property="og:title" content="Texas security deposit help — GetMyDeposit (coming soon)">
+<meta property="og:description" content="Landlord kept your Texas deposit? If they missed the 30-day deadline to return it or itemize deductions, the law can presume bad faith — up to 3x plus fees may be on the table. Coming soon — not live yet.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://getmydeposit.net/">
 <meta name="twitter:card" content="summary">
@@ -137,21 +137,8 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
 .trust .t{font-size:12.5px;line-height:1.35;color:var(--ink-soft)}
 .trust .t b{display:block;color:var(--ink);font-weight:600;font-size:13px;margin-bottom:3px;line-height:1.25}
 
-.formwrap{margin:28px 22px 8px;background:linear-gradient(180deg,#fbf8f1,#f3eee2);
-  border:1px solid var(--line-strong);border-radius:var(--radius-lg);padding:26px 22px;position:relative}
-.formwrap .seal{position:absolute;top:-14px;left:50%;transform:translateX(-50%);
-  background:var(--green);color:#fdfbf4;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  padding:6px 14px;border-radius:40px;box-shadow:var(--shadow-sm);white-space:nowrap}
-.formwrap h2{font-family:var(--serif);font-weight:600;font-size:21px;text-align:center;margin:8px 0 5px;color:var(--ink)}
-.formwrap .ask{font-size:13.5px;color:var(--muted);text-align:center;margin:0 auto 18px;max-width:38ch;line-height:1.5}
-.fields{display:grid;grid-template-columns:1.4fr 1fr;gap:13px}
-.field{display:flex;flex-direction:column;gap:6px}
-.field label{font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--ink-soft)}
-.field input{font-family:var(--sans);font-size:16px;padding:13px 14px;color:var(--ink);
-  background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);width:100%;transition:border-color .15s,box-shadow .15s}
-.field input::placeholder{color:#a9b0a6}
-.field input:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(31,81,64,.12)}
-.formwrap .submit{margin-top:16px;width:100%}
+.closing{text-align:center;padding:30px 26px 6px}
+.closing .cta{min-width:260px}
 .note{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;
   font-size:12px;color:var(--muted);margin:13px 0 0;text-align:center}
 .note i{color:var(--verify);vertical-align:-1px}
@@ -178,10 +165,8 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
 @media(max-width:560px){
   .hero{padding:32px 20px 24px}
   .head{padding:16px 18px}
-  .rights,.sect{padding-left:18px;padding-right:18px}
+  .rights,.sect,.closing{padding-left:18px;padding-right:18px}
   .band,.price,.trust{margin-left:18px;margin-right:18px}
-  .formwrap{margin-left:16px;margin-right:16px;padding:24px 18px}
-  .fields{grid-template-columns:1fr}
   .trust{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){
@@ -192,7 +177,7 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
 </head>
 <body>
 
-<div class="announce"><span class="dot"></span><b>Early access — not live yet.</b> This is a waitlist. Nothing is prepared, filed, or sent right now, and we are not a law firm.</div>
+<div class="announce"><span class="dot"></span><b>Coming soon — not live yet.</b> Nothing is prepared, filed, or sent right now, and we are not a law firm.</div>
 
 <div class="wrap">
   <div class="doc">
@@ -215,8 +200,8 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
       <h1 class="reveal" style="animation-delay:.13s">Landlord kept your deposit? Texas law may let you take back <em>up to 3×.</em></h1>
       <p class="lede reveal" style="animation-delay:.22s">If they missed Texas's 30-day deadline to return it <b>or send an itemized list of deductions</b>, the law can presume bad faith — opening the door to up to 3× plus fees. We're building GetMyDeposit to give Texas renters the paperwork and plain-English steps to do it themselves.</p>
       <p class="qual reveal" style="animation-delay:.29s">Up to 3× is the statutory maximum in bad-faith cases — not a typical or promised result.</p>
-      <button class="cta reveal" style="animation-delay:.36s" onclick="track('hero_cta');document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">Join early access <i class="ti ti-arrow-right"></i></button>
-      <p class="micro reveal" style="animation-delay:.44s"><i class="ti ti-circle-check"></i>Free to join &nbsp;·&nbsp; No payment &nbsp;·&nbsp; No lawyer</p>
+      <button class="cta reveal" style="animation-delay:.36s" onclick="track('hero_cta');window.location.href='thanks.html'">Get my deposit back <i class="ti ti-arrow-right"></i></button>
+      <p class="micro reveal" style="animation-delay:.44s"><i class="ti ti-circle-check"></i>Free &nbsp;·&nbsp; No sign-up &nbsp;·&nbsp; No payment</p>
     </section>
 
     <section class="rights">
@@ -256,18 +241,9 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
       <div><i class="ti ti-map-pin"></i><span class="t"><b>Made for Texas</b>One state, done right — not generic</span></div>
     </div>
 
-    <div class="formwrap" id="formCard">
-      <span class="seal">Early access · Texas</span>
-      <form id="leadForm">
-        <h2>Join the early-access list</h2>
-        <p class="ask">GetMyDeposit isn't live yet. Tell us you're interested — it helps us decide which Texas cities to launch in first.</p>
-        <div class="fields">
-          <div class="field"><label for="f_email">Email</label><input id="f_email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="name@email.com"></div>
-          <div class="field"><label for="f_city">City <span style="color:var(--muted);font-weight:400">(optional)</span></label><input id="f_city" type="text" name="city" autocomplete="address-level2" placeholder="Austin"></div>
-        </div>
-        <button type="submit" class="cta submit">Join early access <i class="ti ti-arrow-right"></i></button>
-        <p class="note"><span><i class="ti ti-shield-lock"></i> Not live yet</span><span class="sep">·</span><span>No payment</span><span class="sep">·</span><span>No legal advice</span></p>
-      </form>
+    <div class="closing">
+      <button class="cta" onclick="track('closing_cta');window.location.href='thanks.html'">Get my deposit back <i class="ti ti-arrow-right"></i></button>
+      <p class="note"><span><i class="ti ti-shield-lock"></i> Not live yet</span><span class="sep">·</span><span>No sign-up</span><span class="sep">·</span><span>No payment</span></p>
     </div>
 
     <footer class="foot">
@@ -280,27 +256,21 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
   </div>
 </div>
 
-<div class="stickybar"><button class="cta" onclick="track('sticky_cta');document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">Join early access <i class="ti ti-arrow-right"></i></button></div>
+<div class="stickybar"><button class="cta" onclick="track('sticky_cta');window.location.href='thanks.html'">Get my deposit back <i class="ti ti-arrow-right"></i></button></div>
 
 <script>
 /* ===== CONFIG — paste your Google Ads conversion send-to (ID/LABEL) ===== */
 var ADS_CONVERSION = "AW-874562020/CONVERSION_LABEL";   // paste the LABEL (after the slash) from your Google Ads event snippet
-var FORMSPREE = "";   // optional — leave blank for click-only testing; add a formspree.io endpoint later to also collect emails
 /* ======================================================================= */
 
+/* The CTA buttons fire this (desire signal) then go to thanks.html,
+   whose page-load is the Google Ads conversion (URL contains /thanks). */
 function track(label){
   if(typeof gtag==='function'){
     gtag('event','desire_click',{event_label:label});
     if(ADS_CONVERSION && ADS_CONVERSION.indexOf('CONVERSION_LABEL')===-1){ gtag('event','conversion',{send_to:ADS_CONVERSION}); }
   }
 }
-
-document.getElementById('leadForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  track('lead_submit');
-  if(FORMSPREE){ fetch(FORMSPREE, {method:'POST', body:new FormData(e.target), headers:{'Accept':'application/json'}}).catch(function(){}); }
-  window.location.href = 'thanks.html';   // page-load = the Google Ads conversion
-});
 </script>
 </body>
 </html>
