@@ -3,7 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thanks — you're on the early-access list — GetMyDeposit</title>
+<title>You're on the early-access list — GetMyDeposit</title>
+<meta name="description" content="You're on the GetMyDeposit early-access list. We're building a self-help security-deposit paperwork toolkit for Texas renters. Not live yet.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5 3.7 6v6c0 4.6 3.5 8.4 8.3 9.5 4.8-1.1 8.3-4.9 8.3-9.5V6L12 2.5Z' fill='%231f5140'/%3E%3Cpath d='M12 8.1l1.15 2.5 2.72.3-2.02 1.86.55 2.7L12 16.7l-2.4 1.36.55-2.7-2.02-1.86 2.72-.3L12 8.1Z' fill='%239a7b46'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,8 +17,8 @@
 <style>
 :root{
   --paper:#f4efe4; --paper-2:#efe8d9; --surface:#fffdf8;
-  --ink:#142e27; --ink-soft:#39473f; --muted:#6a766c;
-  --green:#1f5140; --green-deepest:#0f2c22; --brass:#9a7b46; --brass-soft:#c2a268;
+  --ink:#142e27; --ink-soft:#39473f; --muted:#5f6b61;
+  --green:#1f5140; --green-deepest:#0f2c22; --brass:#9a7b46; --brass-ink:#7d6230; --brass-soft:#c2a268;
   --line:#e4ddcc; --line-strong:#d6ccb4; --verify:#1f7a4d;
   --radius:11px; --radius-lg:18px;
   --serif:"Fraunces",Georgia,serif; --sans:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -35,13 +38,14 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;mi
 .seal{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;
   background:linear-gradient(180deg,#f1ede1,#e7e0cf);border:1px solid var(--line-strong);color:var(--green)}
 .seal i{font-size:32px}
-.eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-ink);margin-bottom:10px}
 h1{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.2;margin:0 0 12px;color:var(--ink);text-wrap:balance}
 p.body{font-size:14.5px;color:var(--ink-soft);margin:0 0 24px;line-height:1.6}
 .btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fdfbf4;text-decoration:none;
   font-weight:600;font-size:15px;padding:13px 26px;border-radius:var(--radius);border:1px solid var(--green-deepest);
   box-shadow:0 8px 20px -8px rgba(31,81,64,.6);transition:transform .15s,background .2s}
 .btn:hover{background:#236050;transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid var(--brass-soft);outline-offset:2px}
 .foot{border-top:1px solid var(--line);margin-top:26px;padding-top:18px;font-size:11px;color:var(--muted);line-height:1.6}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.card{animation:none}}
@@ -52,9 +56,9 @@ p.body{font-size:14.5px;color:var(--ink-soft);margin:0 0 24px;line-height:1.6}
     <div class="top"></div>
     <div class="inner">
       <div class="seal"><i class="ti ti-circle-check"></i></div>
-      <div class="eyebrow">You're on the list</div>
-      <h1>Thanks — you're early</h1>
-      <p class="body">GetMyDeposit isn't live yet — we're building a self-help paperwork tool for Texas renters whose landlord missed the 30-day deadline to return a deposit. Under Texas Property Code § 92.109, a landlord who keeps a deposit in bad faith can owe up to 3× plus fees. We'll have it ready soon.</p>
+      <div class="eyebrow">Early access · Texas</div>
+      <h1>You're on the list</h1>
+      <p class="body">GetMyDeposit isn't live yet — we're building a self-help paperwork toolkit for Texas renters whose landlord missed the 30-day deadline to return a deposit or send an itemized list of deductions. Under Texas Property Code § 92.109, a landlord who keeps a deposit in bad faith can owe up to 3× plus fees. If we launch in your area, this is exactly the kind of case it's built for.</p>
       <a class="btn" href="index.html"><i class="ti ti-arrow-left"></i> Back to home</a>
       <p class="foot">We are not a law firm and do not give legal advice — at launch we provide self-help document templates and instructions you complete yourself. In Texas you represent yourself in small-claims (Justice) court; no lawyer required. Every case is different and we can't promise any specific outcome. Not affiliated with any court or government agency.</p>
     </div>

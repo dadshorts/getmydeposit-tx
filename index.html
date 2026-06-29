@@ -4,7 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Texas security deposit help — GetMyDeposit (early access)</title>
-<meta name="description" content="Texas landlord kept your deposit? If they missed the 30-day deadline, the law can presume bad faith — you may be able to claim up to 3x plus fees. We're building a self-help paperwork tool. Join early access — not live yet.">
+<meta name="description" content="Texas landlord kept your deposit? If they missed the 30-day deadline to return it or itemize deductions, the law can presume bad faith — you may be able to claim up to 3x plus fees. We're building a self-help paperwork tool. Join early access — not live yet.">
+<link rel="canonical" href="https://getmydeposit.net/">
+<meta name="theme-color" content="#0f2c22">
+<meta property="og:title" content="Texas security deposit help — GetMyDeposit (early access)">
+<meta property="og:description" content="Landlord kept your Texas deposit? If they missed the 30-day deadline to return it or itemize deductions, the law can presume bad faith — up to 3x plus fees may be on the table. Join early access — not live yet.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getmydeposit.net/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5 3.7 6v6c0 4.6 3.5 8.4 8.3 9.5 4.8-1.1 8.3-4.9 8.3-9.5V6L12 2.5Z' fill='%231f5140'/%3E%3Cpath d='M12 8.1l1.15 2.5 2.72.3-2.02 1.86.55 2.7L12 16.7l-2.4 1.36.55-2.7-2.02-1.86 2.72-.3L12 8.1Z' fill='%239a7b46'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,9 +23,9 @@
 <style>
 :root{
   --paper:#f4efe4; --paper-2:#efe8d9; --surface:#fffdf8;
-  --ink:#142e27; --ink-soft:#39473f; --muted:#6a766c;
-  --green:#1f5140; --green-deep:#10302541; --green-deepest:#0f2c22;
-  --brass:#9a7b46; --brass-soft:#c2a268;
+  --ink:#142e27; --ink-soft:#39473f; --muted:#5f6b61;
+  --green:#1f5140; --green-deepest:#0f2c22;
+  --brass:#9a7b46; --brass-ink:#7d6230; --brass-soft:#c2a268;
   --line:#e4ddcc; --line-strong:#d6ccb4;
   --verify:#1f7a4d;
   --radius:11px; --radius-lg:18px;
@@ -32,24 +40,20 @@ body{margin:0;color:var(--ink);background:var(--paper);
   font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
   background-image:radial-gradient(120% 80% at 50% -10%, #fbf8f1 0%, var(--paper) 46%, var(--paper-2) 100%);
   background-attachment:fixed;position:relative}
-/* fine paper grain */
 body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E")}
 .wrap{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:0 16px 46px}
 
-/* ---- announcement / honesty bar ---- */
 .announce{position:relative;z-index:2;background:var(--green-deepest);color:#eef2ea;
   font-size:12.5px;line-height:1.5;text-align:center;padding:9px 18px;letter-spacing:.1px}
 .announce b{color:#fff;font-weight:600}
 .announce .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--brass-soft);
   vertical-align:1px;margin-right:7px;box-shadow:0 0 0 3px rgba(194,162,104,.2)}
 
-/* ---- the document ---- */
 .doc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);
   box-shadow:var(--shadow);overflow:hidden;margin-top:18px}
 .doc-top{height:5px;background:linear-gradient(90deg,var(--green) 0%,var(--green) 60%,var(--brass) 60%,var(--brass) 100%)}
 
-/* ---- header ---- */
 .head{display:flex;align-items:center;justify-content:space-between;gap:12px;
   padding:18px 26px;border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:10px}
@@ -59,17 +63,17 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opa
 .head .loc{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
   border:1px solid var(--line-strong);border-radius:40px;padding:5px 11px;white-space:nowrap}
 
-/* ---- hero ---- */
 .hero{padding:40px 28px 30px;text-align:center}
 .eyebrow{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px}
-.eyebrow span{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);white-space:nowrap}
+.eyebrow span{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-ink);white-space:nowrap}
 .eyebrow .ln{height:1px;width:36px;background:linear-gradient(90deg,transparent,var(--brass-soft))}
 .eyebrow .ln.r{background:linear-gradient(90deg,var(--brass-soft),transparent)}
 h1{font-family:var(--serif);font-weight:600;font-size:clamp(31px,7.4vw,46px);line-height:1.08;
   letter-spacing:-.01em;margin:0 auto 18px;max-width:15ch;text-wrap:balance;color:var(--ink)}
 h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
-.lede{font-size:16.5px;color:var(--ink-soft);max-width:46ch;margin:0 auto 26px}
+.lede{font-size:18px;color:var(--ink-soft);max-width:46ch;margin:0 auto 14px;line-height:1.55}
 .lede b{color:var(--ink);font-weight:600}
+.qual{font-size:12.5px;font-style:italic;color:var(--muted);max-width:42ch;margin:0 auto 24px;line-height:1.45}
 .cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;
   font-family:var(--sans);font-size:16px;font-weight:600;color:#fdfbf4;
   background:var(--green);border:1px solid var(--green-deepest);
@@ -78,37 +82,38 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
   transition:transform .15s ease,box-shadow .2s ease,background .2s ease}
 .cta:hover{background:#236050;transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.14) inset,0 14px 26px -10px rgba(31,81,64,.65)}
 .cta:active{transform:translateY(0)}
+.cta:focus-visible,.btn:focus-visible{outline:3px solid var(--brass-soft);outline-offset:2px}
 .cta i{font-size:18px;transition:transform .2s ease}
 .cta:hover i{transform:translateX(3px)}
 .micro{font-size:12.5px;color:var(--muted);margin:15px 0 0;letter-spacing:.2px}
 .micro i{color:var(--verify);vertical-align:-1px;margin-right:3px}
 
-/* ---- statutory rights ---- */
 .rights{padding:6px 22px 30px}
 .rights-h{text-align:center;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
   color:var(--muted);margin:0 0 16px}
 .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .rcard{background:linear-gradient(180deg,#fffefa,#fbf7ee);border:1px solid var(--line);
-  border-radius:var(--radius);padding:18px 12px 15px;text-align:center;position:relative}
+  border-radius:var(--radius);padding:18px 12px 15px;text-align:center}
 .rcard .big{font-family:var(--serif);font-weight:600;font-size:clamp(22px,5.4vw,29px);line-height:1;color:var(--green);letter-spacing:-.02em}
 .rcard .lab{font-size:11.5px;color:var(--ink-soft);margin-top:8px;line-height:1.35}
-.rcard .cite{font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--brass);margin-top:9px;font-weight:600}
+.rcard .cite{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--brass-ink);margin-top:9px;font-weight:600}
+.verify-law{text-align:center;margin:16px 0 0;font-size:12.5px}
+.verify-law a{color:var(--brass-ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:1px}
+.verify-law a:hover{border-bottom-color:var(--brass-ink)}
+.verify-law i{vertical-align:-2px;margin-right:4px;color:var(--brass-ink)}
 
-/* ---- band / narrative ---- */
 .band{margin:0 22px;padding:20px 22px;border-radius:var(--radius);
   background:var(--green-deepest);color:#e9eee9;position:relative;overflow:hidden}
-.band::after{content:"\201D";position:absolute;right:14px;top:-10px;font-family:var(--serif);font-size:90px;color:rgba(194,162,104,.18);line-height:1}
+.band::after{content:"\201D";position:absolute;right:18px;top:6px;font-family:var(--serif);font-size:84px;color:rgba(194,162,104,.18);line-height:1}
 .band p{margin:0;font-size:14.5px;line-height:1.55;max-width:52ch}
 .band b{color:#fff;font-weight:600}
 
-/* ---- section scaffold ---- */
 .sect{padding:30px 26px 6px}
-.sect-h{font-family:var(--serif);font-weight:600;font-size:13px;letter-spacing:.02em;color:var(--ink);
+.sect-h{font-family:var(--serif);font-weight:600;font-size:13px;color:var(--ink);
   text-align:center;margin:0 0 4px;text-transform:uppercase;letter-spacing:.16em}
-.sect-h.brass{color:var(--brass)}
+.sect-h.brass{color:var(--brass-ink)}
 .sub-lbl{text-align:center;font-size:12.5px;color:var(--muted);margin:0 auto 18px;max-width:40ch}
 
-/* ---- steps ---- */
 .steps{display:grid;gap:11px}
 .step{display:flex;gap:14px;align-items:flex-start;background:var(--surface);
   border:1px solid var(--line);border-radius:var(--radius);padding:15px 16px}
@@ -118,23 +123,20 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
 .step h3{font-family:var(--serif);font-weight:600;font-size:16px;margin:2px 0 3px;color:var(--ink)}
 .step p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.5}
 
-/* ---- pricing note ---- */
 .price{margin:22px 26px 2px;border:1px solid var(--line-strong);border-radius:var(--radius);
-  background:linear-gradient(180deg,#fffefa,#f7f1e4);padding:20px;text-align:center;position:relative}
-.price .tagline{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin:0 0 8px}
+  background:linear-gradient(180deg,#fffefa,#f7f1e4);padding:20px;text-align:center}
+.price .tagline{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-ink);margin:0 0 8px}
 .price .amt{font-family:var(--serif);font-weight:600;font-size:30px;color:var(--ink);line-height:1}
 .price .amt small{font-size:14px;color:var(--muted);font-weight:500;font-family:var(--sans)}
 .price .desc{font-size:13px;color:var(--ink-soft);margin:9px 0 0}
 
-/* ---- trust row ---- */
 .trust{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
   border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:24px 26px 2px}
 .trust div{background:var(--surface);padding:14px 14px;display:flex;gap:10px;align-items:center}
 .trust i{font-size:20px;color:var(--green);flex-shrink:0}
 .trust .t{font-size:12.5px;line-height:1.35;color:var(--ink-soft)}
-.trust .t b{display:block;color:var(--ink);font-weight:600;font-size:13px}
+.trust .t b{display:block;color:var(--ink);font-weight:600;font-size:13px;margin-bottom:3px;line-height:1.25}
 
-/* ---- form ---- */
 .formwrap{margin:28px 22px 8px;background:linear-gradient(180deg,#fbf8f1,#f3eee2);
   border:1px solid var(--line-strong);border-radius:var(--radius-lg);padding:26px 22px;position:relative}
 .formwrap .seal{position:absolute;top:-14px;left:50%;transform:translateX(-50%);
@@ -142,7 +144,7 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
   padding:6px 14px;border-radius:40px;box-shadow:var(--shadow-sm);white-space:nowrap}
 .formwrap h2{font-family:var(--serif);font-weight:600;font-size:21px;text-align:center;margin:8px 0 5px;color:var(--ink)}
 .formwrap .ask{font-size:13.5px;color:var(--muted);text-align:center;margin:0 auto 18px;max-width:38ch;line-height:1.5}
-.fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.fields{display:grid;grid-template-columns:1.4fr 1fr;gap:13px}
 .field{display:flex;flex-direction:column;gap:6px}
 .field label{font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--ink-soft)}
 .field input{font-family:var(--sans);font-size:16px;padding:13px 14px;color:var(--ink);
@@ -155,22 +157,25 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
 .note i{color:var(--verify);vertical-align:-1px}
 .note .sep{color:var(--line-strong)}
 
-/* ---- footer ---- */
 .foot{border-top:1px solid var(--line);margin-top:30px;padding:22px 26px 26px;text-align:center}
 .foot .fmark{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px;color:var(--green)}
 .foot .fmark .mark{width:20px;height:20px}
 .foot .fmark span{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--ink)}
 .foot p{font-size:11px;line-height:1.6;color:var(--muted);margin:0 auto;max-width:60ch}
 
-/* ---- sticky mobile cta ---- */
 .stickybar{display:none}
 
-/* ---- entrance motion ---- */
 .reveal{opacity:0;animation:rise .8s cubic-bezier(.2,.75,.25,1) forwards}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
-@media(max-width:560px){
+@media(max-width:768px){
+  .stickybar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;
+    background:rgba(255,253,248,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line-strong);
+    padding:10px 14px;box-shadow:0 -4px 20px -6px rgba(20,46,39,.18)}
+  .stickybar .cta{width:100%;padding:14px}
   .wrap{padding-bottom:84px}
+}
+@media(max-width:560px){
   .hero{padding:32px 20px 24px}
   .head{padding:16px 18px}
   .rights,.sect{padding-left:18px;padding-right:18px}
@@ -178,10 +183,6 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
   .formwrap{margin-left:16px;margin-right:16px;padding:24px 18px}
   .fields{grid-template-columns:1fr}
   .trust{grid-template-columns:1fr}
-  .stickybar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;
-    background:rgba(255,253,248,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line-strong);
-    padding:10px 14px;box-shadow:0 -4px 20px -6px rgba(20,46,39,.18)}
-  .stickybar .cta{width:100%;padding:14px}
 }
 @media(prefers-reduced-motion:reduce){
   .reveal{animation:none;opacity:1;transform:none}
@@ -212,31 +213,33 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
     <section class="hero">
       <div class="eyebrow reveal" style="animation-delay:.05s"><span class="ln"></span><span>Texas Property Code § 92.109</span><span class="ln r"></span></div>
       <h1 class="reveal" style="animation-delay:.13s">Landlord kept your deposit? Texas law may let you take back <em>up to 3×.</em></h1>
-      <p class="lede reveal" style="animation-delay:.22s">If they missed Texas's 30-day deadline to return it, the law <b>can presume bad faith</b> — opening the door to up to 3× plus fees. We're building GetMyDeposit to give Texas renters the paperwork and plain-English steps to do it themselves.</p>
-      <button class="cta reveal" style="animation-delay:.31s" onclick="track('hero_cta');document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">Join early access <i class="ti ti-arrow-right"></i></button>
-      <p class="micro reveal" style="animation-delay:.4s"><i class="ti ti-clock"></i>Takes 2 minutes &nbsp;·&nbsp; No lawyer &nbsp;·&nbsp; No payment</p>
+      <p class="lede reveal" style="animation-delay:.22s">If they missed Texas's 30-day deadline to return it <b>or send an itemized list of deductions</b>, the law can presume bad faith — opening the door to up to 3× plus fees. We're building GetMyDeposit to give Texas renters the paperwork and plain-English steps to do it themselves.</p>
+      <p class="qual reveal" style="animation-delay:.29s">Up to 3× is the statutory maximum in bad-faith cases — not a typical or promised result.</p>
+      <button class="cta reveal" style="animation-delay:.36s" onclick="track('hero_cta');document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">Join early access <i class="ti ti-arrow-right"></i></button>
+      <p class="micro reveal" style="animation-delay:.44s"><i class="ti ti-circle-check"></i>Free to join &nbsp;·&nbsp; No payment &nbsp;·&nbsp; No lawyer</p>
     </section>
 
     <section class="rights">
       <p class="rights-h">What Texas law gives the renter</p>
       <div class="rgrid">
-        <div class="rcard"><div class="big">30 days</div><div class="lab">to return your deposit or itemize</div><div class="cite">§ 92.103</div></div>
+        <div class="rcard"><div class="big">30 days</div><div class="lab">to return your deposit or itemize deductions</div><div class="cite">§ 92.103</div></div>
         <div class="rcard"><div class="big">up to 3×</div><div class="lab">the amount wrongfully kept, in bad faith</div><div class="cite">§ 92.109</div></div>
         <div class="rcard"><div class="big">+ fees</div><div class="lab">$100 plus attorney costs recoverable</div><div class="cite">§ 92.109</div></div>
       </div>
+      <p class="verify-law"><i class="ti ti-external-link"></i><a href="https://guides.sll.texas.gov/landlord-tenant-law/security-deposits" target="_blank" rel="noopener">Read the law yourself — official Texas State Law Library</a></p>
     </section>
 
     <div class="band">
-      <p>Most renters never challenge a kept deposit — the paperwork feels like too much, so they walk away from money that's rightfully theirs. <b>That's the gap GetMyDeposit is being built to help close.</b></p>
+      <p>Most renters never challenge a kept deposit — the paperwork feels like too much, so they walk away from money that's rightfully theirs. <b>That's the gap we're building GetMyDeposit to close.</b></p>
     </div>
 
     <section class="sect">
-      <h2 class="sect-h brass">How it'll work when we launch</h2>
+      <h2 class="sect-h brass">How it will work at launch</h2>
       <p class="sub-lbl">A self-help toolkit — you stay in control the whole way.</p>
       <div class="steps">
         <div class="step"><div class="n">1</div><div><h3>Get the templates</h3><p>Plain-English demand-letter and small-claims templates built for Texas deposit disputes.</p></div></div>
         <div class="step"><div class="n">2</div><div><h3>Fill them in yourself</h3><p>Follow the step-by-step instructions and complete the forms with your own details.</p></div></div>
-        <div class="step"><div class="n">3</div><div><h3>You file it yourself</h3><p>Texas lets you represent yourself in small-claims court — and keep everything you recover.</p></div></div>
+        <div class="step"><div class="n">3</div><div><h3>File it yourself</h3><p>Texas lets you represent yourself in small-claims (Justice) court — no lawyer required.</p></div></div>
       </div>
     </section>
 
@@ -247,9 +250,9 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
     </div>
 
     <div class="trust">
-      <div><i class="ti ti-scale"></i><span class="t"><b>Grounded in statute</b>Built on Texas Property Code § 92.109</span></div>
+      <div><i class="ti ti-book-2"></i><span class="t"><b>Grounded in statute</b>Built on Texas Property Code § 92.109</span></div>
       <div><i class="ti ti-user-check"></i><span class="t"><b>You stay in control</b>Self-help — we never represent you</span></div>
-      <div><i class="ti ti-lock"></i><span class="t"><b>Private &amp; secure</b>No SSN, no payment, encrypted (HTTPS)</span></div>
+      <div><i class="ti ti-lock"></i><span class="t"><b>We ask for almost nothing</b>Email and city are optional. No case details, no payment.</span></div>
       <div><i class="ti ti-map-pin"></i><span class="t"><b>Made for Texas</b>One state, done right — not generic</span></div>
     </div>
 
@@ -257,10 +260,10 @@ h1 em{font-style:italic;font-weight:500;color:var(--green);white-space:nowrap}
       <span class="seal">Early access · Texas</span>
       <form id="leadForm">
         <h2>Join the early-access list</h2>
-        <p class="ask">GetMyDeposit isn't live yet. Tell us you're interested — it helps us decide where to launch first.</p>
+        <p class="ask">GetMyDeposit isn't live yet. Tell us you're interested — it helps us decide which Texas cities to launch in first.</p>
         <div class="fields">
-          <div class="field"><label>Email <span style="color:var(--muted);font-weight:400">(optional)</span></label><input type="email" name="email" placeholder="name@email.com"></div>
-          <div class="field"><label>City</label><input type="text" name="city" placeholder="Austin"></div>
+          <div class="field"><label for="f_email">Email</label><input id="f_email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="name@email.com"></div>
+          <div class="field"><label for="f_city">City <span style="color:var(--muted);font-weight:400">(optional)</span></label><input id="f_city" type="text" name="city" autocomplete="address-level2" placeholder="Austin"></div>
         </div>
         <button type="submit" class="cta submit">Join early access <i class="ti ti-arrow-right"></i></button>
         <p class="note"><span><i class="ti ti-shield-lock"></i> Not live yet</span><span class="sep">·</span><span>No payment</span><span class="sep">·</span><span>No legal advice</span></p>
