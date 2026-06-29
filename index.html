@@ -6,6 +6,9 @@
 <title>Get your Texas security deposit back — GetMyDeposit</title>
 <meta name="description" content="Texas landlord kept your deposit? If they missed the 30-day deadline, the law presumes bad faith — you can claim up to 3x plus fees. We build the paperwork. You keep 100%.">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.6.0/dist/tabler-icons.min.css">
+<!-- GOOGLE TAG: replace AW-CONVERSION_ID (both lines) with your Google Ads conversion ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-CONVERSION_ID');</script>
 <style>
 :root{
   --page:#f6f6f4; --surface:#fff; --text:#1d1d1b; --muted:#6b6b66; --faint:#9a9a94;
@@ -116,7 +119,7 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
       <span class="badge"><i class="ti ti-scale"></i>Texas Property Code §92.109</span>
       <h1>Your landlord is sitting on money that's <span class="loss">legally yours.</span> Take it back — <span class="win">up to 3×.</span></h1>
       <p class="sub">They blew Texas's 30-day deadline — so the law <b>already presumes they're wrong.</b> Claim triple what they kept. We build the paperwork; you keep every dollar.</p>
-      <button class="cta" onclick="document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">See what you're owed — free <i class="ti ti-arrow-right" style="vertical-align:-2px"></i></button>
+      <button class="cta" onclick="track('hero_cta');document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">See what you're owed — free <i class="ti ti-arrow-right" style="vertical-align:-2px"></i></button>
       <p class="micro">2-minute start · no lawyer · no payment to begin</p>
     </div>
 
@@ -171,7 +174,7 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
       <div class="done" id="done">
         <i class="ti ti-circle-check"></i>
         <h2>You're on the early list</h2>
-        <p>We're launching in your city now — we'll email your demand letter the moment it's ready. Want the full court-ready kit (and your shot at 3×) the day we go live?</p>
+        <p>We're putting GetMyDeposit live in your city now. Want the full court-ready kit — and your shot at 3× — the day we go live?</p>
         <button class="cta" id="payBtn" style="max-width:none">Yes — reserve my $79 kit (no charge now)</button>
       </div>
     </div>
@@ -182,13 +185,20 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
   </div>
 </div>
 
-<div class="stickybar"><button class="cta" onclick="document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">Get my money back — free <i class="ti ti-arrow-right" style="vertical-align:-2px"></i></button></div>
+<div class="stickybar"><button class="cta" onclick="track('sticky_cta');document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">Get my money back — free <i class="ti ti-arrow-right" style="vertical-align:-2px"></i></button></div>
 
 <script>
-/* ========= CONFIG — paste your own values here ========= */
-var FORMSPREE = "https://formspree.io/f/YOUR_FORM_ID";   // 1) create a free form at formspree.io, paste its endpoint
-var STRIPE_LINK = "";                                     // 2) optional: paste a Stripe Payment Link to take real $79 payments
-/* ======================================================= */
+/* ===== CONFIG — paste your Google Ads conversion send-to (ID/LABEL) ===== */
+var ADS_CONVERSION = "AW-CONVERSION_ID/CONVERSION_LABEL";   // from Google Ads > Conversions; enables Google to optimize toward clicks
+var FORMSPREE = "";   // optional — leave blank for click-only testing; add a formspree.io endpoint later to also collect emails
+/* ======================================================================= */
+
+function track(label){
+  if(typeof gtag==='function'){
+    gtag('event','desire_click',{event_label:label});
+    if(ADS_CONVERSION && ADS_CONVERSION.indexOf('CONVERSION_ID')===-1){ gtag('event','conversion',{send_to:ADS_CONVERSION}); }
+  }
+}
 
 var keptInput = document.getElementById('kept');
 document.querySelectorAll('.toggle button').forEach(function(b){
@@ -200,19 +210,16 @@ document.querySelectorAll('.toggle button').forEach(function(b){
 
 document.getElementById('leadForm').addEventListener('submit', function(e){
   e.preventDefault();
-  var data = new FormData(e.target);
-  fetch(FORMSPREE, {method:'POST', body:data, headers:{'Accept':'application/json'}}).catch(function(){});
+  track('lead_submit');
+  if(FORMSPREE){ fetch(FORMSPREE, {method:'POST', body:new FormData(e.target), headers:{'Accept':'application/json'}}).catch(function(){}); }
   document.getElementById('leadForm').style.display='none';
   document.getElementById('done').style.display='block';
 });
 
 document.getElementById('payBtn').addEventListener('click', function(){
-  /* PAYMENT-INTENT SIGNAL — this is the buy-signal we test for */
-  var d = new FormData(); d.append('event','PAYMENT_INTENT_$79'); d.append('_subject','BUY SIGNAL — clicked $79');
-  fetch(FORMSPREE, {method:'POST', body:d, headers:{'Accept':'application/json'}}).catch(function(){});
-  if(window.gtag){ gtag('event','conversion',{send_to:'PAYMENT_INTENT'}); }  /* optional Google Ads conversion */
-  if(STRIPE_LINK){ window.location.href = STRIPE_LINK; }
-  else { this.textContent = "Reserved — you're first in line"; this.style.background='var(--success)'; }
+  track('reserve_79');
+  this.textContent = "Reserved — you're first in line";
+  this.style.background='var(--success)';
 });
 </script>
 </body>
