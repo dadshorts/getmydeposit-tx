@@ -73,7 +73,7 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
 .field{display:flex;flex-direction:column;gap:5px;margin-bottom:13px}
 .field.full{grid-column:1/-1}
 .field label{font-size:13px;color:var(--muted)}
-.field input,.field select{font:inherit;font-size:15px;padding:9px 11px;border:1px solid var(--border-strong);
+.field input,.field select{font:inherit;font-size:16px;padding:12px 12px;border:1px solid var(--border-strong);
   border-radius:var(--radius);background:var(--surface);color:var(--text);width:100%}
 .field input:focus,.field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-bg)}
 .note{font-size:12px;color:var(--faint);text-align:center;margin:10px 0 0}
@@ -84,10 +84,17 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
 .done p{font-size:13px;color:var(--muted);margin:0 0 16px}
 .foot{border-top:1px solid var(--border);padding:14px 22px;text-align:center}
 .foot p{font-size:11px;color:var(--faint);margin:0}
+.stickybar{display:none}
+@media(max-width:560px){
+  .stickybar{display:block;position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--border);padding:9px 12px;z-index:50;box-shadow:0 -2px 12px rgba(0,0,0,.07)}
+  .stickybar .cta{width:100%;padding:14px;font-size:16px}
+  body{padding-bottom:78px}
+}
 @media(max-width:480px){
   .fields{grid-template-columns:1fr}
   .cols3,.cols2{grid-template-columns:1fr}
-  .hero{padding:24px 16px 18px}
+  .hero{padding:24px 16px 16px}
+  h1{font-size:24px}
 }
 </style>
 </head>
@@ -108,7 +115,7 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
     <div class="hero">
       <span class="badge"><i class="ti ti-scale"></i>Texas Property Code §92.109</span>
       <h1>Your landlord is sitting on money that's <span class="loss">legally yours.</span> Take it back — <span class="win">up to 3×.</span></h1>
-      <p class="sub">Because they missed Texas's 30-day deadline, the law <b>already presumes bad faith</b> — so you can claim triple what they kept, plus your fees. We build the paperwork. You keep every dollar.</p>
+      <p class="sub">They blew Texas's 30-day deadline — so the law <b>already presumes they're wrong.</b> Claim triple what they kept. We build the paperwork; you keep every dollar.</p>
       <button class="cta" onclick="document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">See what you're owed — free <i class="ti ti-arrow-right" style="vertical-align:-2px"></i></button>
       <p class="micro">2-minute start · no lawyer · no payment to begin</p>
     </div>
@@ -174,6 +181,8 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
     </div>
   </div>
 </div>
+
+<div class="stickybar"><button class="cta" onclick="document.getElementById('formCard').scrollIntoView({behavior:'smooth'})">Get my money back — free <i class="ti ti-arrow-right" style="vertical-align:-2px"></i></button></div>
 
 <script>
 /* ========= CONFIG — paste your own values here ========= */
