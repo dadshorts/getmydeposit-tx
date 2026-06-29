@@ -170,9 +170,9 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
       </form>
       <div class="done" id="done">
         <i class="ti ti-circle-check"></i>
-        <h2>Your free demand letter is on its way</h2>
-        <p>It's yours to send — no strings. Ready to take it all the way and claim your 3×?</p>
-        <button class="cta" id="payBtn" style="max-width:none">Get the full court-ready kit — $79</button>
+        <h2>You're on the early list</h2>
+        <p>We're launching in your city now — we'll email your demand letter the moment it's ready. Want the full court-ready kit (and your shot at 3×) the day we go live?</p>
+        <button class="cta" id="payBtn" style="max-width:none">Yes — reserve my $79 kit (no charge now)</button>
       </div>
     </div>
 
@@ -212,7 +212,7 @@ document.getElementById('payBtn').addEventListener('click', function(){
   fetch(FORMSPREE, {method:'POST', body:d, headers:{'Accept':'application/json'}}).catch(function(){});
   if(window.gtag){ gtag('event','conversion',{send_to:'PAYMENT_INTENT'}); }  /* optional Google Ads conversion */
   if(STRIPE_LINK){ window.location.href = STRIPE_LINK; }
-  else { this.textContent = "Got it — we'll email your kit shortly"; this.style.background='var(--success)'; }
+  else { this.textContent = "Reserved — you're first in line"; this.style.background='var(--success)'; }
 });
 </script>
 </body>
