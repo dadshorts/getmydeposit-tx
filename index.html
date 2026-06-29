@@ -212,8 +212,7 @@ document.getElementById('leadForm').addEventListener('submit', function(e){
   e.preventDefault();
   track('lead_submit');
   if(FORMSPREE){ fetch(FORMSPREE, {method:'POST', body:new FormData(e.target), headers:{'Accept':'application/json'}}).catch(function(){}); }
-  document.getElementById('leadForm').style.display='none';
-  document.getElementById('done').style.display='block';
+  window.location.href = 'thanks.html';   // page-load = the Google Ads conversion
 });
 
 document.getElementById('payBtn').addEventListener('click', function(){
