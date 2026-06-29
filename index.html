@@ -6,9 +6,9 @@
 <title>Get your Texas security deposit back — GetMyDeposit</title>
 <meta name="description" content="Texas landlord kept your deposit? If they missed the 30-day deadline, the law presumes bad faith — you can claim up to 3x plus fees. We build the paperwork. You keep 100%.">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.6.0/dist/tabler-icons.min.css">
-<!-- GOOGLE TAG: replace AW-CONVERSION_ID (both lines) with your Google Ads conversion ID -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-CONVERSION_ID');</script>
+<!-- Google tag (gtag.js) — Google Ads AW-874562020 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-874562020"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-874562020');</script>
 <style>
 :root{
   --page:#f6f6f4; --surface:#fff; --text:#1d1d1b; --muted:#6b6b66; --faint:#9a9a94;
@@ -189,14 +189,14 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
 
 <script>
 /* ===== CONFIG — paste your Google Ads conversion send-to (ID/LABEL) ===== */
-var ADS_CONVERSION = "AW-CONVERSION_ID/CONVERSION_LABEL";   // from Google Ads > Conversions; enables Google to optimize toward clicks
+var ADS_CONVERSION = "AW-874562020/CONVERSION_LABEL";   // paste the LABEL (the part after the slash) from your Google Ads event snippet
 var FORMSPREE = "";   // optional — leave blank for click-only testing; add a formspree.io endpoint later to also collect emails
 /* ======================================================================= */
 
 function track(label){
   if(typeof gtag==='function'){
     gtag('event','desire_click',{event_label:label});
-    if(ADS_CONVERSION && ADS_CONVERSION.indexOf('CONVERSION_ID')===-1){ gtag('event','conversion',{send_to:ADS_CONVERSION}); }
+    if(ADS_CONVERSION && ADS_CONVERSION.indexOf('CONVERSION_LABEL')===-1){ gtag('event','conversion',{send_to:ADS_CONVERSION}); }
   }
 }
 
