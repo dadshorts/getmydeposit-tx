@@ -145,12 +145,8 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
       </div>
     </div>
 
-    <!-- REPLACE THESE WITH REAL, VERIFIED TESTIMONIALS BEFORE LAUNCH (FTC requirement). Placeholders only. -->
     <div class="sect" style="padding-top:14px">
-      <div class="grid cols2">
-        <div class="quote"><div class="st">★★★★★</div><p>"Got my full $1,400 back in three weeks. The letter alone scared my landlord into paying."</p><div class="who">Verified renter · Austin</div></div>
-        <div class="quote"><div class="st">★★★★★</div><p>"I'd have given up. They owed me triple and I didn't even know it was a law."</p><div class="who">Verified renter · Dallas</div></div>
-      </div>
+      <div class="mini" style="text-align:center;padding:14px"><p style="font-size:13px;color:var(--muted);margin:0">A new service built for Texas renters — be one of the first we help get their deposit back. Backed by Texas Property Code §92.109.</p></div>
     </div>
 
     <div class="form" id="formCard">
@@ -171,12 +167,6 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
         <button type="submit" class="cta" style="max-width:none">Write my free demand letter</button>
         <p class="note"><i class="ti ti-lock"></i>No SSN, no documents, no payment to start.</p>
       </form>
-      <div class="done" id="done">
-        <i class="ti ti-circle-check"></i>
-        <h2>You're on the early list</h2>
-        <p>We're putting GetMyDeposit live in your city now. Want the full court-ready kit — and your shot at 3× — the day we go live?</p>
-        <button class="cta" id="payBtn" style="max-width:none">Yes — reserve my $79 kit (no charge now)</button>
-      </div>
     </div>
 
     <div class="foot">
@@ -215,11 +205,6 @@ document.getElementById('leadForm').addEventListener('submit', function(e){
   window.location.href = 'thanks.html';   // page-load = the Google Ads conversion
 });
 
-document.getElementById('payBtn').addEventListener('click', function(){
-  track('reserve_79');
-  this.textContent = "Reserved — you're first in line";
-  this.style.background='var(--success)';
-});
 </script>
 </body>
 </html>
