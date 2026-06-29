@@ -145,33 +145,26 @@ h1 .loss{color:var(--danger)} h1 .win{color:var(--success)}
 
     <div class="sect" style="padding-top:18px">
       <div class="grid cols3">
-        <div class="step"><i class="ti ti-message-2"></i><h3>Tell us what happened</h3><p>A few quick questions about your deposit. Two minutes.</p></div>
+        <div class="step"><i class="ti ti-message-2"></i><h3>Tell the tool what happened</h3><p>At launch, answer a few questions about your deposit — takes two minutes.</p></div>
         <div class="step"><i class="ti ti-file-text g"></i><h3>Paperwork made simple</h3><p>At launch: a demand-letter and small-claims template with plain-English instructions you complete yourself.</p></div>
         <div class="step"><i class="ti ti-send"></i><h3>You file it yourself</h3><p>Texas lets you represent yourself in small-claims court — and keep what you recover.</p></div>
       </div>
     </div>
 
     <div class="sect" style="padding-top:14px">
-      <div class="mini" style="text-align:center;padding:14px"><p style="font-size:13px;color:var(--muted);margin:0">A new service built for Texas renters — join the first group we notify at launch. Backed by Texas Property Code §92.109.</p></div>
+      <div class="mini" style="text-align:center;padding:14px"><p style="font-size:13px;color:var(--muted);margin:0">A new service built for Texas renters — join the first group lining up for early access. Tenant rights under Texas Property Code §92.109.</p></div>
     </div>
 
     <div class="form" id="formCard">
       <form id="leadForm">
         <h2>Join the early-access list</h2>
-        <p class="ask">Did your landlord keep part or all of your deposit?</p>
-        <div class="toggle">
-          <button type="button" data-v="some">Kept some of it</button>
-          <button type="button" data-v="all">Kept all of it</button>
-        </div>
-        <input type="hidden" name="kept" id="kept">
+        <p class="ask">GetMyDeposit isn't live yet. Tell us you're interested — it helps us decide where to launch first.</p>
         <div class="fields">
           <div class="field"><label>Email (optional)</label><input type="email" name="email" placeholder="name@email.com"></div>
           <div class="field"><label>City</label><input type="text" name="city" placeholder="Austin"></div>
-          <div class="field"><label>Deposit amount</label><input type="text" name="deposit" placeholder="$1,200"></div>
-          <div class="field"><label>Move-out date</label><input type="date" name="moveout"></div>
         </div>
         <button type="submit" class="cta" style="max-width:none">Join early access</button>
-        <p class="note"><i class="ti ti-lock"></i>Early access — not live yet. No SSN, no payment. Self-help service, not a law firm.</p>
+        <p class="note"><i class="ti ti-lock"></i>Early access — not live yet. No payment, no documents, no legal advice.</p>
       </form>
     </div>
 
@@ -195,14 +188,6 @@ function track(label){
     if(ADS_CONVERSION && ADS_CONVERSION.indexOf('CONVERSION_LABEL')===-1){ gtag('event','conversion',{send_to:ADS_CONVERSION}); }
   }
 }
-
-var keptInput = document.getElementById('kept');
-document.querySelectorAll('.toggle button').forEach(function(b){
-  b.addEventListener('click', function(){
-    document.querySelectorAll('.toggle button').forEach(function(x){x.classList.remove('on')});
-    b.classList.add('on'); keptInput.value = b.dataset.v;
-  });
-});
 
 document.getElementById('leadForm').addEventListener('submit', function(e){
   e.preventDefault();
